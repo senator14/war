@@ -409,6 +409,7 @@
 				E60A9FC91B8DA17600180DEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E60A9FCA1B8DA17600180DEF /* Build configuration list for PBXNativeTarget "WarTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				E60A9FCC1B8DA17600180DEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -20,9 +20,14 @@ class ViewController: UIViewController {
 
     
     // Creating array with card names
-    var cardNamesArray:[String] = ["card1","card2","card3","card4","card5","card6","card7","card8","card9","card10","card11","card12","card13"]
     
+    // Authour suppose this way. He says that then you can easily replace filename and it won't affect to randomize becuse we randomize index of element in array. I'm not totally agree with him and below my way of doing this.
+    //  var cardNamesArray:[String] = ["card1","card2","card3","card4","card5","card6","card7","card8","card9","card10","card11","card12","card13"]
     
+    //My guess is that that files are well prepared and instead of hardcoding, we can use another way of filling array. This method presented by stackoverflow member @GoodbyeStackOverflow
+    var cardNamesArray = (1...13).map{"card\($0)"}
+
+    // Initiate scores
     var playerScoreTotal = 0
     var enemyScoreTotal = 0
     
@@ -32,6 +37,8 @@ class ViewController: UIViewController {
         
         
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,26 +72,13 @@ class ViewController: UIViewController {
             playerScoreTotal = playerScoreTotal + 1
             // output to the label
             self.playerScore.text = String(playerScoreTotal)
-            println("Player: " + "\(firstRandomNumber)")
-            println("Enemy: " + "\(secondRandomNumber)")
-            println("Player score: " + "\(playerScoreTotal)")
-            println("Enemy score: " + "\(enemyScoreTotal)")
-            
         } else if firstRandomNumber == secondRandomNumber {
-            println("Player: " + "\(firstRandomNumber)")
-            println("Enemy: " + "\(secondRandomNumber)")
-            println("Player score: " + "\(playerScoreTotal)")
-            println("Enemy score: " + "\(enemyScoreTotal)")
-            
+            // If cards are equal, we don't do anything, waiting for another round
         } else {
-            // increaing enemy score
+            // increasing enemy score
             enemyScoreTotal = enemyScoreTotal + 1
             // output to the label (which way is better: as above or as here?)
             self.enemyScore.text = "\(enemyScoreTotal)"
-            println("Player: " + "\(firstRandomNumber)")
-            println("Enemy: " + "\(secondRandomNumber)")
-            println("Player score: " + "\(playerScoreTotal)")
-            println("Enemy score: " + "\(enemyScoreTotal)")
         }
         
         
