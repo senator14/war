@@ -66,7 +66,8 @@ class ViewController: UIViewController {
         
         
         
-        // Determine the higher card
+        
+        // Determine the higher card. Is switch|case more preffered here in terms of good programming style?
         if firstRandomNumber > secondRandomNumber {
             // increasing player score
             playerScoreTotal = playerScoreTotal + 1
